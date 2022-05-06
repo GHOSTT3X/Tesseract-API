@@ -1,0 +1,6 @@
+Project Folder = '/var/www/FlaskAPI'      <-- includes WSGI configuration and API code and logs
+
+Apache Configuration = '/etc/httpd/conf.d/app.conf'
+
+Tesseract tessdata = '/usr/local/share/tessdata'
+

@@ -1,0 +1,151 @@
+[Fri May 06 05:29:22.164957 2022] [wsgi:error] [pid 8775] [remote 10.0.2.15:38250] mod_wsgi (pid=8775): Failed to exec Python script file '/var/www/FlaskAPI/app.wsgi'.
+[Fri May 06 05:29:22.165039 2022] [wsgi:error] [pid 8775] [remote 10.0.2.15:38250] mod_wsgi (pid=8775): Exception occurred processing WSGI script '/var/www/FlaskAPI/app.wsgi'.
+[Fri May 06 05:29:22.165321 2022] [wsgi:error] [pid 8775] [remote 10.0.2.15:38250] Traceback (most recent call last):
+[Fri May 06 05:29:22.165353 2022] [wsgi:error] [pid 8775] [remote 10.0.2.15:38250]   File "/var/www/FlaskAPI/app.wsgi", line 10, in <module>
+[Fri May 06 05:29:22.165358 2022] [wsgi:error] [pid 8775] [remote 10.0.2.15:38250]     from app import app as application
+[Fri May 06 05:29:22.165376 2022] [wsgi:error] [pid 8775] [remote 10.0.2.15:38250]   File "/var/www/FlaskAPI/app.py", line 57
+[Fri May 06 05:29:22.165389 2022] [wsgi:error] [pid 8775] [remote 10.0.2.15:38250]     else:
+[Fri May 06 05:29:22.165411 2022] [wsgi:error] [pid 8775] [remote 10.0.2.15:38250]     ^
+[Fri May 06 05:29:22.165422 2022] [wsgi:error] [pid 8775] [remote 10.0.2.15:38250] IndentationError: unexpected indent
+[Fri May 06 05:36:34.680405 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38268] [2022-05-06 05:36:34,673] ERROR in app: Exception on /upload-image [POST]
+[Fri May 06 05:36:34.681016 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38268] Traceback (most recent call last):
+[Fri May 06 05:36:34.681035 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38268]   File "/var/www/PythonFlask/venv/lib/python3.6/site-packages/flask/app.py", line 2073, in wsgi_app
+[Fri May 06 05:36:34.681039 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38268]     response = self.full_dispatch_request()
+[Fri May 06 05:36:34.681042 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38268]   File "/var/www/PythonFlask/venv/lib/python3.6/site-packages/flask/app.py", line 1518, in full_dispatch_request
+[Fri May 06 05:36:34.681045 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38268]     rv = self.handle_user_exception(e)
+[Fri May 06 05:36:34.681048 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38268]   File "/var/www/PythonFlask/venv/lib/python3.6/site-packages/flask/app.py", line 1516, in full_dispatch_request
+[Fri May 06 05:36:34.681051 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38268]     rv = self.dispatch_request()
+[Fri May 06 05:36:34.681054 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38268]   File "/var/www/PythonFlask/venv/lib/python3.6/site-packages/flask/app.py", line 1502, in dispatch_request
+[Fri May 06 05:36:34.681057 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38268]     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+[Fri May 06 05:36:34.681060 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38268]   File "/var/www/FlaskAPI/app.py", line 408, in upload_and_proc_image
+[Fri May 06 05:36:34.681063 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38268]     return {1: {'mou3araf: ': mou3araf,'Tari5: ': tari5, 'adad: ': adad}, 2: {'Nachat Ri2esi: ': nachat_ri2esi,
+[Fri May 06 05:36:34.681073 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38268] UnboundLocalError: local variable 'mou3araf' referenced before assignment
+[Fri May 06 05:36:34.681155 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38268] 
+[Fri May 06 05:37:00.134418 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38270] [2022-05-06 05:37:00,133] ERROR in app: Exception on /upload-image [POST]
+[Fri May 06 05:37:00.134457 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38270] Traceback (most recent call last):
+[Fri May 06 05:37:00.134461 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38270]   File "/var/www/PythonFlask/venv/lib/python3.6/site-packages/flask/app.py", line 2073, in wsgi_app
+[Fri May 06 05:37:00.134464 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38270]     response = self.full_dispatch_request()
+[Fri May 06 05:37:00.134467 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38270]   File "/var/www/PythonFlask/venv/lib/python3.6/site-packages/flask/app.py", line 1518, in full_dispatch_request
+[Fri May 06 05:37:00.134470 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38270]     rv = self.handle_user_exception(e)
+[Fri May 06 05:37:00.134481 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38270]   File "/var/www/PythonFlask/venv/lib/python3.6/site-packages/flask/app.py", line 1516, in full_dispatch_request
+[Fri May 06 05:37:00.134485 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38270]     rv = self.dispatch_request()
+[Fri May 06 05:37:00.134488 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38270]   File "/var/www/PythonFlask/venv/lib/python3.6/site-packages/flask/app.py", line 1502, in dispatch_request
+[Fri May 06 05:37:00.134491 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38270]     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+[Fri May 06 05:37:00.134494 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38270]   File "/var/www/FlaskAPI/app.py", line 408, in upload_and_proc_image
+[Fri May 06 05:37:00.134497 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38270]     return {1: {'mou3araf: ': mou3araf,'Tari5: ': tari5, 'adad: ': adad}, 2: {'Nachat Ri2esi: ': nachat_ri2esi,
+[Fri May 06 05:37:00.134503 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38270] UnboundLocalError: local variable 'mou3araf' referenced before assignment
+[Fri May 06 05:37:00.134551 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38270] 
+[Fri May 06 05:37:35.773804 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38272] [2022-05-06 05:37:35,758] ERROR in app: Exception on /upload-image [POST]
+[Fri May 06 05:37:35.775051 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38272] Traceback (most recent call last):
+[Fri May 06 05:37:35.775068 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38272]   File "/var/www/PythonFlask/venv/lib/python3.6/site-packages/flask/app.py", line 2073, in wsgi_app
+[Fri May 06 05:37:35.775073 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38272]     response = self.full_dispatch_request()
+[Fri May 06 05:37:35.775076 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38272]   File "/var/www/PythonFlask/venv/lib/python3.6/site-packages/flask/app.py", line 1518, in full_dispatch_request
+[Fri May 06 05:37:35.775079 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38272]     rv = self.handle_user_exception(e)
+[Fri May 06 05:37:35.775083 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38272]   File "/var/www/PythonFlask/venv/lib/python3.6/site-packages/flask/app.py", line 1516, in full_dispatch_request
+[Fri May 06 05:37:35.775086 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38272]     rv = self.dispatch_request()
+[Fri May 06 05:37:35.775089 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38272]   File "/var/www/PythonFlask/venv/lib/python3.6/site-packages/flask/app.py", line 1502, in dispatch_request
+[Fri May 06 05:37:35.775092 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38272]     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+[Fri May 06 05:37:35.775096 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38272]   File "/var/www/FlaskAPI/app.py", line 408, in upload_and_proc_image
+[Fri May 06 05:37:35.775099 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38272]     return {1: {'mou3araf: ': mou3araf,'Tari5: ': tari5, 'adad: ': adad}, 2: {'Nachat Ri2esi: ': nachat_ri2esi,
+[Fri May 06 05:37:35.775115 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38272] UnboundLocalError: local variable 'mou3araf' referenced before assignment
+[Fri May 06 05:37:35.775226 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38272] [Fri May 06 05:29:22.164957 2022] [wsgi:error] [pid 8775] [remote 10.0.2.15:38250] mod_wsgi (pid=8775): Failed to exec Python script file '/var/www/FlaskAPI/app.wsgi'.
+[Fri May 06 05:29:22.165039 2022] [wsgi:error] [pid 8775] [remote 10.0.2.15:38250] mod_wsgi (pid=8775): Exception occurred processing WSGI script '/var/www/FlaskAPI/app.wsgi'.
+[Fri May 06 05:29:22.165321 2022] [wsgi:error] [pid 8775] [remote 10.0.2.15:38250] Traceback (most recent call last):
+[Fri May 06 05:29:22.165353 2022] [wsgi:error] [pid 8775] [remote 10.0.2.15:38250]   File "/var/www/FlaskAPI/app.wsgi", line 10, in <module>
+[Fri May 06 05:29:22.165358 2022] [wsgi:error] [pid 8775] [remote 10.0.2.15:38250]     from app import app as application
+[Fri May 06 05:29:22.165376 2022] [wsgi:error] [pid 8775] [remote 10.0.2.15:38250]   File "/var/www/FlaskAPI/app.py", line 57
+[Fri May 06 05:29:22.165389 2022] [wsgi:error] [pid 8775] [remote 10.0.2.15:38250]     else:
+[Fri May 06 05:29:22.165411 2022] [wsgi:error] [pid 8775] [remote 10.0.2.15:38250]     ^
+[Fri May 06 05:29:22.165422 2022] [wsgi:error] [pid 8775] [remote 10.0.2.15:38250] IndentationError: unexpected indent
+[Fri May 06 05:36:34.680405 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38268] [2022-05-06 05:36:34,673] ERROR in app: Exception on /upload-image [POST]
+[Fri May 06 05:36:34.681016 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38268] Traceback (most recent call last):
+[Fri May 06 05:36:34.681035 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38268]   File "/var/www/PythonFlask/venv/lib/python3.6/site-packages/flask/app.py", line 2073, in wsgi_app
+[Fri May 06 05:36:34.681039 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38268]     response = self.full_dispatch_request()
+[Fri May 06 05:36:34.681042 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38268]   File "/var/www/PythonFlask/venv/lib/python3.6/site-packages/flask/app.py", line 1518, in full_dispatch_request
+[Fri May 06 05:36:34.681045 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38268]     rv = self.handle_user_exception(e)
+[Fri May 06 05:36:34.681048 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38268]   File "/var/www/PythonFlask/venv/lib/python3.6/site-packages/flask/app.py", line 1516, in full_dispatch_request
+[Fri May 06 05:36:34.681051 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38268]     rv = self.dispatch_request()
+[Fri May 06 05:36:34.681054 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38268]   File "/var/www/PythonFlask/venv/lib/python3.6/site-packages/flask/app.py", line 1502, in dispatch_request
+[Fri May 06 05:36:34.681057 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38268]     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+[Fri May 06 05:36:34.681060 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38268]   File "/var/www/FlaskAPI/app.py", line 408, in upload_and_proc_image
+[Fri May 06 05:36:34.681063 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38268]     return {1: {'mou3araf: ': mou3araf,'Tari5: ': tari5, 'adad: ': adad}, 2: {'Nachat Ri2esi: ': nachat_ri2esi,
+[Fri May 06 05:36:34.681073 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38268] UnboundLocalError: local variable 'mou3araf' referenced before assignment
+[Fri May 06 05:36:34.681155 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38268] 
+[Fri May 06 05:37:00.134418 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38270] [2022-05-06 05:37:00,133] ERROR in app: Exception on /upload-image [POST]
+[Fri May 06 05:37:00.134457 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38270] Traceback (most recent call last):
+[Fri May 06 05:37:00.134461 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38270]   File "/var/www/PythonFlask/venv/lib/python3.6/site-packages/flask/app.py", line 2073, in wsgi_app
+[Fri May 06 05:37:00.134464 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38270]     response = self.full_dispatch_request()
+[Fri May 06 05:37:00.134467 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38270]   File "/var/www/PythonFlask/venv/lib/python3.6/site-packages/flask/app.py", line 1518, in full_dispatch_request
+[Fri May 06 05:37:00.134470 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38270]     rv = self.handle_user_exception(e)
+[Fri May 06 05:37:00.134481 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38270]   File "/var/www/PythonFlask/venv/lib/python3.6/site-packages/flask/app.py", line 1516, in full_dispatch_request
+[Fri May 06 05:37:00.134485 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38270]     rv = self.dispatch_request()
+[Fri May 06 05:37:00.134488 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38270]   File "/var/www/PythonFlask/venv/lib/python3.6/site-packages/flask/app.py", line 1502, in dispatch_request
+[Fri May 06 05:37:00.134491 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38270]     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+[Fri May 06 05:37:00.134494 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38270]   File "/var/www/FlaskAPI/app.py", line 408, in upload_and_proc_image
+[Fri May 06 05:37:00.134497 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38270]     return {1: {'mou3araf: ': mou3araf,'Tari5: ': tari5, 'adad: ': adad}, 2: {'Nachat Ri2esi: ': nachat_ri2esi,
+[Fri May 06 05:37:00.134503 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38270] UnboundLocalError: local variable 'mou3araf' referenced before assignment
+[Fri May 06 05:37:00.134551 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38270] 
+[Fri May 06 05:37:35.773804 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38272] [2022-05-06 05:37:35,758] ERROR in app: Exception on /upload-image [POST]
+[Fri May 06 05:37:35.775051 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38272] Traceback (most recent call last):
+[Fri May 06 05:37:35.775068 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38272]   File "/var/www/PythonFlask/venv/lib/python3.6/site-packages/flask/app.py", line 2073, in wsgi_app
+[Fri May 06 05:37:35.775073 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38272]     response = self.full_dispatch_request()
+[Fri May 06 05:37:35.775076 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38272]   File "/var/www/PythonFlask/venv/lib/python3.6/site-packages/flask/app.py", line 1518, in full_dispatch_request
+[Fri May 06 05:37:35.775079 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38272]     rv = self.handle_user_exception(e)
+[Fri May 06 05:37:35.775083 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38272]   File "/var/www/PythonFlask/venv/lib/python3.6/site-packages/flask/app.py", line 1516, in full_dispatch_request
+[Fri May 06 05:37:35.775086 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38272]     rv = self.dispatch_request()
+[Fri May 06 05:37:35.775089 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38272]   File "/var/www/PythonFlask/venv/lib/python3.6/site-packages/flask/app.py", line 1502, in dispatch_request
+[Fri May 06 05:37:35.775092 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38272]     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+[Fri May 06 05:37:35.775096 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38272]   File "/var/www/FlaskAPI/app.py", line 408, in upload_and_proc_image
+[Fri May 06 05:37:35.775099 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38272]     return {1: {'mou3araf: ': mou3araf,'Tari5: ': tari5, 'adad: ': adad}, 2: {'Nachat Ri2esi: ': nachat_ri2esi,
+[Fri May 06 05:37:35.775115 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38272] UnboundLocalError: local variable 'mou3araf' referenced before assignment
+[Fri May 06 05:37:35.775226 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38272] [Fri May 06 05:29:22.164957 2022] [wsgi:error] [pid 8775] [remote 10.0.2.15:38250] mod_wsgi (pid=8775): Failed to exec Python script file '/var/www/FlaskAPI/app.wsgi'.
+[Fri May 06 05:29:22.165039 2022] [wsgi:error] [pid 8775] [remote 10.0.2.15:38250] mod_wsgi (pid=8775): Exception occurred processing WSGI script '/var/www/FlaskAPI/app.wsgi'.
+[Fri May 06 05:29:22.165321 2022] [wsgi:error] [pid 8775] [remote 10.0.2.15:38250] Traceback (most recent call last):
+[Fri May 06 05:29:22.165353 2022] [wsgi:error] [pid 8775] [remote 10.0.2.15:38250]   File "/var/www/FlaskAPI/app.wsgi", line 10, in <module>
+[Fri May 06 05:29:22.165358 2022] [wsgi:error] [pid 8775] [remote 10.0.2.15:38250]     from app import app as application
+[Fri May 06 05:29:22.165376 2022] [wsgi:error] [pid 8775] [remote 10.0.2.15:38250]   File "/var/www/FlaskAPI/app.py", line 57
+[Fri May 06 05:29:22.165389 2022] [wsgi:error] [pid 8775] [remote 10.0.2.15:38250]     else:
+[Fri May 06 05:29:22.165411 2022] [wsgi:error] [pid 8775] [remote 10.0.2.15:38250]     ^
+[Fri May 06 05:29:22.165422 2022] [wsgi:error] [pid 8775] [remote 10.0.2.15:38250] IndentationError: unexpected indent
+[Fri May 06 05:36:34.680405 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38268] [2022-05-06 05:36:34,673] ERROR in app: Exception on /upload-image [POST]
+[Fri May 06 05:36:34.681016 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38268] Traceback (most recent call last):
+[Fri May 06 05:36:34.681035 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38268]   File "/var/www/PythonFlask/venv/lib/python3.6/site-packages/flask/app.py", line 2073, in wsgi_app
+[Fri May 06 05:36:34.681039 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38268]     response = self.full_dispatch_request()
+[Fri May 06 05:36:34.681042 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38268]   File "/var/www/PythonFlask/venv/lib/python3.6/site-packages/flask/app.py", line 1518, in full_dispatch_request
+[Fri May 06 05:36:34.681045 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38268]     rv = self.handle_user_exception(e)
+[Fri May 06 05:36:34.681048 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38268]   File "/var/www/PythonFlask/venv/lib/python3.6/site-packages/flask/app.py", line 1516, in full_dispatch_request
+[Fri May 06 05:36:34.681051 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38268]     rv = self.dispatch_request()
+[Fri May 06 05:36:34.681054 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38268]   File "/var/www/PythonFlask/venv/lib/python3.6/site-packages/flask/app.py", line 1502, in dispatch_request
+[Fri May 06 05:36:34.681057 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38268]     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+[Fri May 06 05:36:34.681060 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38268]   File "/var/www/FlaskAPI/app.py", line 408, in upload_and_proc_image
+[Fri May 06 05:36:34.681063 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38268]     return {1: {'mou3araf: ': mou3araf,'Tari5: ': tari5, 'adad: ': adad}, 2: {'Nachat Ri2esi: ': nachat_ri2esi,
+[Fri May 06 05:36:34.681073 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38268] UnboundLocalError: local variable 'mou3araf' referenced before assignment
+[Fri May 06 05:36:34.681155 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38268] 
+[Fri May 06 05:37:00.134418 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38270] [2022-05-06 05:37:00,133] ERROR in app: Exception on /upload-image [POST]
+[Fri May 06 05:37:00.134457 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38270] Traceback (most recent call last):
+[Fri May 06 05:37:00.134461 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38270]   File "/var/www/PythonFlask/venv/lib/python3.6/site-packages/flask/app.py", line 2073, in wsgi_app
+[Fri May 06 05:37:00.134464 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38270]     response = self.full_dispatch_request()
+[Fri May 06 05:37:00.134467 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38270]   File "/var/www/PythonFlask/venv/lib/python3.6/site-packages/flask/app.py", line 1518, in full_dispatch_request
+[Fri May 06 05:37:00.134470 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38270]     rv = self.handle_user_exception(e)
+[Fri May 06 05:37:00.134481 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38270]   File "/var/www/PythonFlask/venv/lib/python3.6/site-packages/flask/app.py", line 1516, in full_dispatch_request
+[Fri May 06 05:37:00.134485 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38270]     rv = self.dispatch_request()
+[Fri May 06 05:37:00.134488 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38270]   File "/var/www/PythonFlask/venv/lib/python3.6/site-packages/flask/app.py", line 1502, in dispatch_request
+[Fri May 06 05:37:00.134491 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38270]     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+[Fri May 06 05:37:00.134494 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38270]   File "/var/www/FlaskAPI/app.py", line 408, in upload_and_proc_image
+[Fri May 06 05:37:00.134497 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38270]     return {1: {'mou3araf: ': mou3araf,'Tari5: ': tari5, 'adad: ': adad}, 2: {'Nachat Ri2esi: ': nachat_ri2esi,
+[Fri May 06 05:37:00.134503 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38270] UnboundLocalError: local variable 'mou3araf' referenced before assignment
+[Fri May 06 05:37:00.134551 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38270] 
+[Fri May 06 05:37:35.773804 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38272] [2022-05-06 05:37:35,758] ERROR in app: Exception on /upload-image [POST]
+[Fri May 06 05:37:35.775051 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38272] Traceback (most recent call last):
+[Fri May 06 05:37:35.775068 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38272]   File "/var/www/PythonFlask/venv/lib/python3.6/site-packages/flask/app.py", line 2073, in wsgi_app
+[Fri May 06 05:37:35.775073 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38272]     response = self.full_dispatch_request()
+[Fri May 06 05:37:35.775076 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38272]   File "/var/www/PythonFlask/venv/lib/python3.6/site-packages/flask/app.py", line 1518, in full_dispatch_request
+[Fri May 06 05:37:35.775079 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38272]     rv = self.handle_user_exception(e)
+[Fri May 06 05:37:35.775083 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38272]   File "/var/www/PythonFlask/venv/lib/python3.6/site-packages/flask/app.py", line 1516, in full_dispatch_request
+[Fri May 06 05:37:35.775086 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38272]     rv = self.dispatch_request()
+[Fri May 06 05:37:35.775089 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38272]   File "/var/www/PythonFlask/venv/lib/python3.6/site-packages/flask/app.py", line 1502, in dispatch_request
+[Fri May 06 05:37:35.775092 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38272]     return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+[Fri May 06 05:37:35.775096 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38272]   File "/var/www/FlaskAPI/app.py", line 408, in upload_and_proc_image
+[Fri May 06 05:37:35.775099 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38272]     return {1: {'mou3araf: ': mou3araf,'Tari5: ': tari5, 'adad: ': adad}, 2: {'Nachat Ri2esi: ': nachat_ri2esi,
+[Fri May 06 05:37:35.775115 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38272] UnboundLocalError: local variable 'mou3araf' referenced before assignment
+[Fri May 06 05:37:35.775226 2022] [wsgi:error] [pid 8858] [remote 10.0.2.15:38272] 

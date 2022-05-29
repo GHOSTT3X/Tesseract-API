@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, jsonify
 from flask import request
 from cv2 import dilate
 import os
@@ -18,12 +18,7 @@ from PIL import Image, ImageEnhance
 from PyPDF4 import PdfFileReader
 from PyPDF4 import PdfFileWriter
 from pdf2image import convert_from_bytes
-import json
 import io
-
-
-
-
 
 
 app = Flask(__name__)
@@ -52,6 +47,7 @@ custom_config_date = r'-l ara+eng --psm 12'
 custom_config_digits = r'--oem 3 --psm 6 outputbase digits'
 custom_config_whitelist = r'-c tessedit_char_whitelist=0123456789/ --psm 6'
 
+
 @app.route("/upload-image", methods=["POST", "GET"])
 def upload_and_proc_image():
 
@@ -70,7 +66,7 @@ def upload_and_proc_image():
             else:
 
                 filename = secure_filename(image.filename)
-                
+
                 if (filename.rsplit(".", 1)[1].upper() == "PDF"):
 
                     src_pdf = PdfFileReader(image.stream, strict=False)
@@ -78,13 +74,13 @@ def upload_and_proc_image():
                     dst_pdf = PdfFileWriter()
 
                     dst_pdf.addPage(src_pdf.getPage(0))
-                    
+
                     pdf_bytes = io.BytesIO()
-                    
+
                     dst_pdf.write(pdf_bytes)
-                    
+
                     pdf_bytes.seek(0)
-                    
+
                     bytes = pdf_bytes.getvalue()
 
                     pages = convert_from_bytes(bytes, last_page=1, dpi=200)
@@ -92,24 +88,20 @@ def upload_and_proc_image():
                     for page in pages:
                         page.save(pdf_bytes, 'PNG')
                     pdf_bytes.seek(0)
- 
-                    img = cv2.imdecode(np.frombuffer(pdf_bytes.read(), np.uint8), 1)
 
-                
-                   
+                    img = cv2.imdecode(np.frombuffer(
+                        pdf_bytes.read(), np.uint8), 1)
+
                 else:
                     # Bytes of Image
                     img_bytes = request.files['image'].read()
-                    
+
                     img = cv2.imdecode(np.frombuffer(img_bytes, np.uint8), 1)
 
-            
-
                 heightImg = 2000
-                widthImg  = 4000
+                widthImg = 4000
 
                 img = cv2.resize(img, (widthImg, heightImg))  # RESIZE IMAGE
-
 
                 def reorder(myPoints):
                     myPoints = myPoints.reshape((4, 2))
@@ -149,7 +141,6 @@ def upload_and_proc_image():
                 def nothing(x):
                     pass
 
-
                 # CONVERT IMAGE TO GRAY SCALE
                 imgBlur = cv2.GaussianBlur(img, (5, 5), 1)  # ADD GAUSSIAN BLUR
                 imgThreshold = cv2.Canny(imgBlur, 30, 150)  # APPLY CANNY BLUR
@@ -158,7 +149,6 @@ def upload_and_proc_image():
                                      iterations=2)  # APPLY DILATION
                 imgThreshold = cv2.erode(
                     imgDial, kernel, iterations=1)  # APPLY EROSION
-                
 
                 # FIND ALL COUNTOURS
                 imgContours = img.copy()  # COPY IMAGE FOR DISPLAY PURPOSES
@@ -216,7 +206,8 @@ def upload_and_proc_image():
 
                     # Tesseract: Third Block
 
-                    third_block = pytesseract.image_to_string(imgWarpColored, config=custom_config_mix)
+                    third_block = pytesseract.image_to_string(
+                        imgWarpColored, config=custom_config_mix)
 
                     def split(first_block):
                         return [char for char in first_block]
@@ -241,11 +232,6 @@ def upload_and_proc_image():
                     third_clean = [s.replace('\u200f', '')
                                    for s in third_clean]
 
-                    name = ["tasmiya", "tasmiyalatiniya", "isem_tijari", "isemt_tijari_latini",
-                            "makar_ejtima3", "ma9ar_nachat", "nitham", "ras", "fara3"]
-
-                    dict1 = dict(zip(name, third_clean))
-
                     ########################
 
                     # First Block:
@@ -261,7 +247,7 @@ def upload_and_proc_image():
                         if (h > 196 and h < 203) and (w > 3627 and w < 3638):
                             cv2.rectangle(img_copy, (x, y),
                                           (x + w, y + h), (36, 255, 12), 1)
-                           
+
                             roi = img[y:y+h, x:x+w]
 
                             roi = roi[10:roi.shape[0] -
@@ -303,18 +289,16 @@ def upload_and_proc_image():
 
                             first_clean = first_block.split(sep='\n')
 
-                         
-
                             for item in first_clean:
                                 if '/' in item:
-                                    tari5 = item
+                                    tarikh = item
 
                             for i in range(len(first_clean)):
                                 if len(first_clean[i]) == 8:
-                                    mou3araf = first_clean[i]
+                                    mouaref = first_clean[i]
                                 elif len(first_clean[i]) in range(9, 13):
                                     if '/' not in first_clean[i]:
-                                        adad = first_clean[i]
+                                        adad_sejel = first_clean[i]
 
                     ########################
 
@@ -329,7 +313,6 @@ def upload_and_proc_image():
                         if (h > 180 and h < 187) and (w > 3627 and w < 3638):
                             cv2.rectangle(img_copy2, (x, y),
                                           (x + w, y + h), (36, 255, 12), 1)
-                           
 
                             roi = img_copy2[y:y+h, x:x+w]
 
@@ -376,7 +359,7 @@ def upload_and_proc_image():
 
                             for i in range(len(forth_clean)):
                                 if len(forth_clean[i]) == 2:
-                                    modet_charika = forth_clean[i]
+                                    modatCharika = forth_clean[i]
 
                             date = []
                             for item in forth_clean:
@@ -389,27 +372,25 @@ def upload_and_proc_image():
                             date2 = date[1]
 
                             if date1 < date2:
-                                tari5_bideyet_nachat = date1
-                                tari5_echhar = date2
+                                tarikhBideyetNachat = date1
+                                tarikhEchhar = date2
                             else:
-                                tari5_bideyet_nachat = date2
-                                tari5_echhar = date1
+                                tarikhBideyetNachat = date2
+                                tarikhEchhar = date1
 
                             for i in range(len(forth_clean)):
                                 if len(forth_clean[i]) > 9:
                                     if '/' not in forth_clean[i]:
                                         if '-' not in forth_clean[i]:
                                             if ':' not in forth_clean[i]:
-                                                nachat_ri2esi = forth_clean[i]
+                                                nachatRaisi = forth_clean[i]
                                                 
-                                                
+                dict1 = {'mouaref': mouaref, 'tarikh': tarikh, 'adad_sejel': adad_sejel, 'nachatRaisi': nachatRaisi,
+                         'tarikhBideyetNachat': tarikhBideyetNachat, 'tarikhEchhar': tarikhEchhar, "modatCharika": modatCharika, "tasmiya": third_clean[0], "tasmiyaLatin": third_clean[1],
+                         "esmTijari": third_clean[2], "esmTijariLatin": third_clean[3], "makarEjtima": third_clean[4], "makarNachat": third_clean[5], "nithamKanouni": third_clean[6], "rasMal": third_clean[7], "adadFar": third_clean[8]}
 
-
-                return {1: {'mou3araf: ': mou3araf,'Tari5: ': tari5, 'adad: ': adad}, 2: {'Nachat Ri2esi: ': nachat_ri2esi,
-                             'Tari5 Bideyet Nachat: ': tari5_bideyet_nachat, 'Tari5 Echhar: ': tari5_echhar}, 3: dict1}
+                return dict1
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
-
-
+    app.run()
